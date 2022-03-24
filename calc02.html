@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calc02.css">
+</head>
+<body>
+   
+    <div class="container">
+     
+        <input type="text" id="visor" class="visor" >
+        <div class="box">
+           <input type="button" value="+" onclick="clicou('+')" class="pqt">
+           <input type="button" value="-" onclick="clicou('-')" class="pqt">
+           <input type="button" value="*" onclick="clicou('*')" class="pqt">
+       </div>
+       <div class="box">
+           <input type="button" value="0" onclick="clicou('0')">
+           <input type="button" value="/" onclick="clicou('/')" class="pqt">
+           <input type="button" value="C" id="clean" class="pqt">
+        </div>
+      <div class="box">
+          <input type="button" value="1" onclick="clicou('1')">
+          <input type="button" value="2" onclick="clicou('2')" >
+          <input type="button" value="3" onclick="clicou('3')">
+        </div>
+        <div class="box">
+            <input type="button" value="4" onclick="clicou('4')">
+            <input type="button" value="5" onclick="clicou('5')">
+            <input type="button" value="6" onclick="clicou('6')" >
+        </div>
+        <div class="box">
+            <input type="button" value="7" onclick="clicou('7')">
+            <input type="button" value="8" onclick="clicou('8')">
+            <input type="button" value="9" onclick="clicou('9')">
+        </div>
+        <div class="box"><input type="button" value="=" id="igual" class="pqt"></div>
+    </div>
+
+<script >
+const visor = document.querySelector('#visor')
+const inputs = document.querySelector('input')
+const limpar = document.querySelector('#clean')
+const igual = document.querySelector('#igual')
+const clicou = (val) =>{
+  let vi = visor
+  vi.value+=val
+}
+const clear = () =>{
+    visor.value=''
+}
+const igualt = () =>{
+    if(visor.value==''){
+        return 
+    }
+   let vi = eval(visor.value)
+   visor.value = vi
+}
+
+limpar.addEventListener('click',clear)
+igual.addEventListener('click',igualt)
+    </script>
+</body>
+</html>
